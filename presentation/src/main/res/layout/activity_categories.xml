@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.categories.CategoriesActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title2">
+
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/lightRed"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/verticalTextView"
+            app:layout_constraintStart_toEndOf="@+id/verticalTextView"
+            app:layout_constraintTop_toTopOf="@+id/verticalTextView"
+            app:layout_constraintVertical_bias="0.571" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/lightRed"
+            app:layout_constraintBottom_toBottomOf="@+id/verticalTextView2"
+            app:layout_constraintStart_toEndOf="@+id/verticalTextView2"
+            app:layout_constraintTop_toTopOf="@+id/verticalTextView2" />
+
+        <kz.karzhas.flashcards.ui.vertical_text_view.VerticalTextView
+            android:id="@+id/verticalTextView2"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/proximasoft"
+            android:text="VOCABULARY"
+            android:textColor="@color/pickedGroupTab"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:direction="downtoup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/lightRed"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/verticalTextView4"
+            app:layout_constraintStart_toEndOf="@+id/verticalTextView4"
+            app:layout_constraintTop_toTopOf="@+id/verticalTextView4" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="5dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="2dp"
+            android:background="@color/lightRed"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/verticalTextView3"
+            app:layout_constraintStart_toEndOf="@+id/verticalTextView3"
+            app:layout_constraintTop_toTopOf="@+id/verticalTextView3" />
+
+        <kz.karzhas.flashcards.ui.vertical_text_view.VerticalTextView
+            android:id="@+id/verticalTextView"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/proximasoft"
+            android:text="LISTENING"
+            android:textColor="@color/unpickedGroupTab"
+            android:textSize="17sp"
+            app:direction="downtoup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verticalTextView2" />
+
+        <kz.karzhas.flashcards.ui.vertical_text_view.VerticalTextView
+            android:id="@+id/verticalTextView3"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/proximasoft"
+            android:text="READING"
+            android:textColor="@color/unpickedGroupTab"
+            android:textSize="17sp"
+            app:direction="downtoup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verticalTextView" />
+
+        <kz.karzhas.flashcards.ui.vertical_text_view.VerticalTextView
+            android:id="@+id/verticalTextView4"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/proximasoft"
+            android:text="WRITING"
+            android:textColor="@color/unpickedGroupTab"
+            android:textSize="17sp"
+            app:direction="downtoup"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verticalTextView3" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/txt_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/stangkorv"
+        android:text="Flashcards"
+        android:textColor="@color/lightBlue"
+        android:textSize="33sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:fontFamily="@font/stangkorv"
+        android:text="Pick a set to practice"
+        android:textColor="#000"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/new_category"
+        android:layout_width="301dp"
+        android:layout_height="146dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/categories_item_new_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
+
+        <ImageView
+            android:id="@+id/view4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/plus"
+            android:padding="14dp"
+            android:background="@drawable/categories_circle_dash"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ImageView>
+
+        <ImageButton
+            android:id="@+id/category_item_arrows"
+            android:layout_width="20dp"
+            android:layout_height="34dp"
+            android:scaleType="fitCenter"
+            android:background="@drawable/categories_new_category_arrows_dash"
+            app:layout_constraintStart_toEndOf="@+id/txt_category_count_cards"
+            app:layout_constraintTop_toTopOf="@+id/txt_category_count_cards"
+            />
+
+        <TextView
+            android:id="@+id/txt_category_count_cards"
+            android:layout_width="170dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/categories_item_label_new_category_dash"
+            android:fontFamily="@font/stangkorv"
+            android:paddingTop="7dp"
+            android:text="NEW CATEGORY"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4"
+            app:layout_constraintVertical_bias="0.428" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_categories"
+        android:layout_width="301dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintEnd_toEndOf="@id/root"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/new_category" />
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/root"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:id="@+id/img_avatar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        app:civ_border_color="#3f51b5"
+        app:civ_border_width="4dp"
+        app:civ_shadow_color="#3f51b5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/avatar" />
+
+    <View
+        android:id="@+id/img_notif"
+        android:layout_width="17dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/categories_small_circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

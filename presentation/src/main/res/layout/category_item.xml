@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/category_item_card"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/categories_item_card_1"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/category_item_circle_1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/categories_item_circle_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/category_item_circle_2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/categories_item_circle_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="30dp"
+        android:text="Daily conversation"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_category_count_cards"
+        android:layout_width="170dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/categories_item_txt_number_of_phrases_1"
+        android:fontFamily="@font/stangkorv"
+        android:paddingTop="7dp"
+        android:text="15 phrases"
+        android:textAlignment="center"
+        android:textColor="@color/lightBlue"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/txt_category_title"
+        app:layout_constraintTop_toBottomOf="@+id/txt_category_title"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/category_item_arrows"
+        android:layout_width="20dp"
+        android:layout_height="34dp"
+        android:background="@drawable/categories_item_img_arrows_1"
+        app:layout_constraintStart_toEndOf="@+id/txt_category_count_cards"
+        app:layout_constraintTop_toTopOf="@+id/txt_category_count_cards"
+        app:srcCompat="@drawable/arrows" />
+
+    <TextView
+        android:id="@+id/category_item_semicircle"
+        android:layout_width="68dp"
+        android:layout_height="38dp"
+        android:background="@drawable/categories_item_semicircle_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

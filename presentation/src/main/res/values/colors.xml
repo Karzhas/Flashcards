@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="unpickedGroupTab">#62666f</color>
+    <color name="pickedGroupTab">#000000</color>
+    <color name="lightRed">#f18b8d</color>
+    <color name="lightBlue">#6a88c5</color>
+    <color name="lightYellow">#ffe0ac</color>
+    <color name="lightGray">#95a1be</color>
+    <color name="lightPink">#f5a597</color>
+    <color name="strongGray">#d0c4b4</color>
+    <color name="white">#FFFFFF</color>
+    <color name="gray">#949393</color>
+
+</resources>
