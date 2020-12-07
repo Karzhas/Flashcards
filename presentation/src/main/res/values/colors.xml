@@ -13,5 +13,15 @@
     <color name="strongGray">#d0c4b4</color>
     <color name="white">#FFFFFF</color>
     <color name="gray">#949393</color>
+    <color name="gradientGray">#c3b5cd</color>
+    <color name="green">#47c690</color>
+    <color name="gray2">#d5d4de</color>
+    <color name="blue">#4f42d8</color>
+    <color name="quotesBlue">#6886c5</color>
+    <color name="gray3">#ebeef4</color>
+    <color name="blue2">#6886c5</color>
+    <color name="blue3">#7791ef</color>
+    <color name="grat4">#b7b7b7</color>
+    <color name="gray5">#f6f6f6</color>
 
 </resources>

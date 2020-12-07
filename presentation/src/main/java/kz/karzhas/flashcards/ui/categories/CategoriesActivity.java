@@ -1,12 +1,13 @@
 package kz.karzhas.flashcards.ui.categories;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -15,19 +16,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import kz.karzhas.data.entity.CategoryMockEntity;
 import kz.karzhas.flashcards.R;
 import kz.karzhas.flashcards.di.FlashcardsApp;
-import kz.karzhas.flashcards.models.CategoryViewModel;
+import kz.karzhas.flashcards.ui.flashcards.FlashcardsActivity;
 import kz.karzhas.flashcards.ui.flatDialog.FlatDialog;
 
-public class CategoriesActivity extends AppCompatActivity {
+public class CategoriesActivity extends AppCompatActivity implements CategoriesContract.View ,
+        MediaPlayer.OnPreparedListener, MediaPlayer.OnCompletionListener {
 
     @BindView(R.id.rv_categories) RecyclerView rec;
     @BindView(R.id.txt_title1) TextView txt_title1;
@@ -41,6 +43,9 @@ public class CategoriesActivity extends AppCompatActivity {
     @Inject
     CategoriesAdapter adapter;
     @Inject CategoriesPresenter presenter;
+    final String DATA_STREAM = "http://online.radiorecord.ru:8101/rr_128";
+
+
 
 
     @Override
@@ -51,9 +56,13 @@ public class CategoriesActivity extends AppCompatActivity {
         ((FlashcardsApp)getApplication()).getActivityComponent().inject(this);
         setupBottomNavigation();
         setupCategoriesRecycler();
-
+        presenter.setView(this);
+        presenter.getCategories();
         layoutNewCategory.setOnClickListener(this::onNewCategoryClick);
     }
+
+
+
 
     private void onNewCategoryClick(View view) {
         final FlatDialog flatDialog = new FlatDialog(CategoriesActivity.this);
@@ -75,7 +84,8 @@ public class CategoriesActivity extends AppCompatActivity {
                 .withFirstButtonListner(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Toast.makeText(CategoriesActivity.this, flatDialog.getFirstTextField(), Toast.LENGTH_SHORT).show();
+                        presenter.addNewCategory(flatDialog.getFirstTextField());
+                        flatDialog.dismiss();
                     }
                 })
                 .withSecondButtonListner(new View.OnClickListener() {
@@ -90,11 +100,8 @@ public class CategoriesActivity extends AppCompatActivity {
     private void setupCategoriesRecycler() {
         rec.setHasFixedSize(true);
         rec.setLayoutManager(layoutManager);
-        List<CategoryViewModel> cat = new ArrayList<>();
-        cat.add(new CategoryViewModel(1,"1",null));
-        cat.add(new CategoryViewModel(1,"2",null));
-        adapter.setCategories(cat);
         rec.setAdapter(adapter);
+        adapter.setActivity(this);
         setupRecyclerScrollListener();
 
     }
@@ -136,5 +143,28 @@ public class CategoriesActivity extends AppCompatActivity {
             }
             return true;
         });
+    }
+
+    public void showCategories(List<CategoryMockEntity> categories) {
+        adapter.setCategories(categories);
+    }
+
+    @Override
+    public void onCategoryClick(View view) {
+        startActivity(new Intent(this, FlashcardsActivity.class)
+                    .putExtra("id", rec.getChildLayoutPosition(view)));
+
+    }
+
+
+    @Override
+    public void onCompletion(MediaPlayer mediaPlayer) {
+
+    }
+
+    @Override
+    public void onPrepared(MediaPlayer mediaPlayer) {
+        mediaPlayer.start();
+        Log.d("asda", "STARTED");
     }
 }

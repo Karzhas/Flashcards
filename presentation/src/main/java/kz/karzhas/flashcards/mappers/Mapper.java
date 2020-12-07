@@ -4,19 +4,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import kz.karzhas.domain.model.Flashcard;
-import kz.karzhas.domain.model.Group;
 import kz.karzhas.flashcards.models.FlashcardViewModel;
-import kz.karzhas.flashcards.models.CategoryViewModel;
 
 public class Mapper {
-    public CategoryViewModel mapGroupToGroupViewModel(Group group){
-        List<FlashcardViewModel> flashcardViewModels = mapFlashcardsToFlashcardViewModel(group.getFlashcards());
-        return new CategoryViewModel(
-                group.getId(),
-                group.getTitle(),
-                flashcardViewModels
-        );
-    }
+//    public CategoryMockEntity mapGroupToGroupViewModel(Group group){
+//        List<FlashcardViewModel> flashcardViewModels = mapFlashcardsToFlashcardViewModel(group.getFlashcards());
+//        return new CategoryMockEntity(
+//                group.getId(),
+//                group.getTitle(),
+//                flashcardViewModels
+//        );
+//    }
 
     public FlashcardViewModel mapFlashcardToFlashcardViewModel(Flashcard flashcard){
         return new FlashcardViewModel(flashcard.getId(),

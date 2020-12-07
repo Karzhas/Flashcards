@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.OvershootInterpolator;
 
-public class FlingCardListener implements View.OnTouchListener {
+
+public class FlingCardListener implements View.OnTouchListener{
+
 
     private static final String TAG = FlingCardListener.class.getSimpleName();
 
@@ -191,10 +193,16 @@ public class FlingCardListener implements View.OnTouchListener {
 
     private float getScrollProgressPercent() {
         if (movedBeyondLeftBorder()) {
+            Log.d("Korzh", "<<");
+            mFlingListener.onRight();
             return -1f;
         } else if (movedBeyondRightBorder()) {
+            Log.d("Korzh", ">>");
+            mFlingListener.onReview();
             return 1f;
         } else {
+            Log.d("Korzh", "==");
+            mFlingListener.onCenter();
             float zeroToOneValue = (aPosX + halfWidth - leftBorder()) / (rightBorder() - leftBorder());
             return zeroToOneValue * 2f - 1f;
         }
@@ -436,6 +444,8 @@ public class FlingCardListener implements View.OnTouchListener {
         return new PointF(this.aPosX, this.aPosY);
     }
 
+
+
     interface FlingListener {
         void onCardExited();
 
@@ -450,6 +460,11 @@ public class FlingCardListener implements View.OnTouchListener {
         void topExit(Object dataObject);
 
         void bottomExit(Object dataObject);
+
+        void onReview();
+        void onRight();
+        void onCenter();
+
     }
 
 }

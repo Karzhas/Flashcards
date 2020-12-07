@@ -1,11 +1,12 @@
 package kz.karzhas.data.entity;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CategoryMockEntity {
     int id;
     String title;
-    List<FlashcardMockEntity> flashcards;
+    List<FlashcardMockEntity> flashcards = new ArrayList<>();
 
     public CategoryMockEntity(String title) {
         this.title = title;
@@ -19,6 +20,12 @@ public class CategoryMockEntity {
     public CategoryMockEntity(int id, String title) {
         this.id = id;
         this.title = title;
+    }
+
+    public CategoryMockEntity(int id, String title, List<FlashcardMockEntity> flashcards) {
+        this.id = id;
+        this.title = title;
+        this.flashcards = flashcards;
     }
 
     public int getId() {

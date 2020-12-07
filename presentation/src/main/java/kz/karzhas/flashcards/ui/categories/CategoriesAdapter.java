@@ -13,19 +13,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import kz.karzhas.data.entity.CategoryMockEntity;
 import kz.karzhas.flashcards.R;
-import kz.karzhas.flashcards.models.CategoryViewModel;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.ViewHolder> {
-    List<CategoryViewModel> categories;
+    List<CategoryMockEntity> categories;
     Context context;
+    CategoriesContract.View activity;
+
+
 
     public CategoriesAdapter(Context context) {
         this.context = context;
     }
 
-    public void setCategories(List<CategoryViewModel> categories) {
+    public void setCategories(List<CategoryMockEntity> categories) {
         this.categories = categories;
+    }
+
+    public void setActivity(CategoriesContract.View activity) {
+        this.activity = activity;
     }
 
     @NonNull
@@ -46,8 +53,8 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
         TextView numberOfPhrases = holder.getNumberOfPhrases();
         TextView semicircle = holder.getSemicircle();
         ImageView arrows = holder.getArrows();
-        categoryTitle.setText("Daily Conversation");
-        numberOfPhrases.setText("16 phrases");
+        categoryTitle.setText(categories.get(position).getTitle());
+        numberOfPhrases.setText("0 phrases");
         if(position % 3 == 0){
             categoryCard.setBackgroundResource(R.drawable.categories_item_card_1);
             circleOne.setBackgroundResource(R.drawable.categories_item_circle_1);
@@ -76,10 +83,15 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Vi
             semicircle.setBackgroundResource(R.drawable.categories_item_semicircle_3);
             arrows.setBackgroundResource(R.drawable.categories_item_img_arrows_3);
         }
+        categoryCard.setOnClickListener(view -> {
+            activity.onCategoryClick(view);
+        });
     }
 
     @Override
     public int getItemCount() {
+        if(categories == null)
+            return 0;
         return categories.size();
     }
 

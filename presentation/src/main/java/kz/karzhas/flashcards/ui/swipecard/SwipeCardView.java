@@ -182,7 +182,7 @@ public class SwipeCardView extends BaseFlingAdapterView {
         }
 
         /**
-         * This is to add a base view at end. To make an illusion that views come out from
+         * This is to addCategory a base view at end. To make an illusion that views come out from
          * a base card. The scale and translation of this view is same as the one previous to
          * this.
          */
@@ -288,7 +288,7 @@ public class SwipeCardView extends BaseFlingAdapterView {
     }
 
     /**
-     *  Set the top view and add the fling listener
+     *  Set the top view and addCategory the fling listener
      */
     private void setTopView() {
         if (getChildCount() > 0) {
@@ -296,6 +296,8 @@ public class SwipeCardView extends BaseFlingAdapterView {
             if (mActiveCard != null) {
                 flingCardListener = new FlingCardListener(this, mActiveCard, mAdapter.getItem(START_STACK_FROM),
                         ROTATION_DEGREES, new FlingCardListener.FlingListener() {
+
+
                     @Override
                     public void onCardExited() {
                         mActiveCard = null;
@@ -346,6 +348,21 @@ public class SwipeCardView extends BaseFlingAdapterView {
                     @Override
                     public void bottomExit(Object dataObject) {
                         mFlingListener.onCardExitBottom(dataObject);
+                    }
+
+                    @Override
+                    public void onReview() {
+                        mFlingListener.onReview();
+                    }
+
+                    @Override
+                    public void onRight() {
+                        mFlingListener.onRight();
+                    }
+
+                    @Override
+                    public void onCenter() {
+                        mFlingListener.onCenter();
                     }
                 });
 
@@ -443,6 +460,11 @@ public class SwipeCardView extends BaseFlingAdapterView {
         void onScroll(float scrollProgressPercent);
         void onCardExitTop(Object dataObject);
         void onCardExitBottom(Object dataObject);
+        void onReview();
+        void onRight();
+        void onCenter();
+
+
     }
 
     public void throwLeft() {

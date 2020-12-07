@@ -7,6 +7,10 @@ public class FlashcardMockEntity {
     String hint;
     int rating;
 
+    public FlashcardMockEntity(){
+
+    }
+
     public FlashcardMockEntity(String frontside, String backside, String hint) {
         this.frontside = frontside;
         this.backside = backside;

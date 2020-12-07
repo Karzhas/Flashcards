@@ -1,10 +1,10 @@
 package kz.karzhas.flashcards.ui.categories;
 
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import kz.karzhas.data.entity.CategoryMockEntity;
 import kz.karzhas.domain.interactor.group.AddGroupUseCase;
 import kz.karzhas.domain.interactor.group.DeleteGroupUseCase;
 import kz.karzhas.domain.interactor.group.GetGroupsUseCase;
-import kz.karzhas.flashcards.models.CategoryViewModel;
 import kz.karzhas.flashcards.ui.abstracts.BasePresenter;
 import kz.karzhas.flashcards.ui.abstracts.BaseView;
 
@@ -31,7 +31,7 @@ public class GroupPresenter<V extends BaseView> extends BasePresenter<V>
     }
 
     @Override
-    public void addGroup(CategoryViewModel groupModel) {
+    public void addGroup(CategoryMockEntity groupModel) {
 
     }
 

@@ -8,9 +8,9 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import kz.karzhas.data.entity.CategoryMockEntity;
 import kz.karzhas.flashcards.R;
 import kz.karzhas.flashcards.di.FlashcardsApp;
-import kz.karzhas.flashcards.models.CategoryViewModel;
 
 public class GroupsActivity extends AppCompatActivity implements GroupsContract.View{
 
@@ -27,7 +27,7 @@ public class GroupsActivity extends AppCompatActivity implements GroupsContract.
     }
 
     @Override
-    public void showGroups(List<CategoryViewModel> groups) {
+    public void showGroups(List<CategoryMockEntity> groups) {
 
     }
 
